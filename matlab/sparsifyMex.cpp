@@ -101,13 +101,13 @@ void mexFunction (int nlhs,mxArray *plhs[],int nrhs,const mxArray *prhs[]) {
   sparsify(M,M_num,dim,idx_sparse,idx_size,min_dist,out_dist,idx_start);
   
   // output
-  const int dims[] = {dim,idx_size};
+  const mwSize dims[] = {dim,idx_size};
   plhs[0]          = mxCreateNumericArray(2,dims,mxDOUBLE_CLASS,mxREAL);
   double *M_sparse = (double*)mxGetPr(plhs[0]);
 
   int *I_sparse = 0;
   if (nlhs==2) {
-      const int dims_i[] = {1,idx_size};
+      const mwSize dims_i[] = {1,idx_size};
       plhs[1]            = mxCreateNumericArray(2,dims_i,mxINT32_CLASS,mxREAL);
       I_sparse           = (int*)mxGetPr(plhs[1]);
   }

@@ -79,7 +79,7 @@ void mexFunction (int nlhs,mxArray *plhs[],int nrhs,const mxArray *prhs[]) {
   
   // output final transformation (dim=2)
   if (dim==2) {
-    const int dims[] = {3,3};
+    const mwSize dims[] = {3,3};
     plhs[0]          = mxCreateNumericArray(2,dims,mxDOUBLE_CLASS,mxREAL);
     double *Tr_mex   = (double*)mxGetPr(plhs[0]);
     for (int32_t i=0; i<2; i++) {
@@ -91,7 +91,7 @@ void mexFunction (int nlhs,mxArray *plhs[],int nrhs,const mxArray *prhs[]) {
     
   // output final transformation (dim=3)
   } else {    
-    const int dims[] = {4,4};
+    const mwSize dims[] = {4,4};
     plhs[0]          = mxCreateNumericArray(2,dims,mxDOUBLE_CLASS,mxREAL);
     double *Tr_mex   = (double*)mxGetPr(plhs[0]);
     for (int32_t i=0; i<3; i++) {
